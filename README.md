@@ -14,7 +14,7 @@ Figure 1: i) Histogram with kde ii) Violin Plot for Password length by Strength
 
 ![image](https://github.com/DrishtiShrrrma/codebert-base-password-strength-classifier/assets/129742046/10c8beb9-0e87-4824-9823-97675f7c2e21)
 
-Figure 2: Class Count
+Figure 2: Table illustrating maximum, minimum and average password length corresponding to each class
 
 
 Moreover, the class counts were as follows:
