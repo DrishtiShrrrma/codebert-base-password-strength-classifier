@@ -10,7 +10,11 @@ To visually grasp the distribution and variability of the dataset, we visualized
 
 ![image](https://github.com/DrishtiShrrrma/codebert-base-password-strength-classifier/assets/129742046/7184e96a-81a7-4071-aa16-2e21a0eed865)
 
+Figure 1: i) Histogram with kde ii) Violin Plot for Password length by Strength
+
 ![image](https://github.com/DrishtiShrrrma/codebert-base-password-strength-classifier/assets/129742046/10c8beb9-0e87-4824-9823-97675f7c2e21)
+
+Figure 2: Class Count
 
 
 Moreover, the class counts were as follows:
