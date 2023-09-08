@@ -18,9 +18,9 @@ Figure 2: Table illustrating maximum, minimum and average password length corres
 
 
 Moreover, the class counts were as follows:
-1  ---> 496801
-0  ---> 89701
-2  ---> 83120
+- 1  ---> 496801
+- 0  ---> 89701
+- 2  ---> 83120
 
 Clearly, a class-imbalance scenario exists. We will be dealing with this with the help of a custom trainer which will be responsible for computing the loss using the normalized weights we will assign and ensuring that the model’s training aligns with our objectives.
 
@@ -35,10 +35,10 @@ Furthermore, metrics like Macro F1, Micro F1, and weighted F1 all revolved aroun
 ## Metrics vs. Reality
 When testing certain passwords, the model demonstrated the following classifications:
 
-'drishti123' → medium
-'Drishti123' → strong
-'drishti' → weak
-'drishti@123' → strong
+- 'drishti123' → medium
+- 'Drishti123' → strong
+- 'drishti' → weak
+- 'drishti@123' → strong
 
 **Interestingly, changing the casing in 'drishti123' to 'Drishti123' altered its classification from medium to strong.** **This implies that the model may factor casing into its decision-making process.** However, from an industry standpoint, such a distinction does not necessarily guarantee that the classifier is robust.
 
