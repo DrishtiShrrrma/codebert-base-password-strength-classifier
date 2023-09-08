@@ -1,18 +1,24 @@
 # Building an Effective Password Strength Classifier
 
 ## Introduction
-Machine learning models are integral to bolstering cybersecurity. With the soaring need for robust security measures, models that proficiently classify password strengths are crucial. However, aligning a password strength classifier with real-world standards presents challenges, particularly in ensuring that model metrics genuinely reflect its real-world performance.
+Machine learning models are integral to bolstering cybersecurity. With the soaring need for robust security measures, models that proficiently classify password strengths are crucial. However, aligning a password strength classifier with real-world standards presents challenges, particularly ensuring that model metrics genuinely reflect its real-world performance.
 
 ## Dataset Overview and Insights
-The dataset comprises passwords from the 000webhost leak, categorized for strength using the PARS tool from Georgia Tech University. This tool integrates commercial password strength meters from Twitter, Microsoft, and Battle. Their unique approach, based on machine learning, only included passwords consistently flagged as weak, medium, or strong across all meters. Initially starting with 3 million passwords, the consistent rating criterion narrowed the dataset to 0.7 million.
+The [dataset](https://www.kaggle.com/datasets/bhavikbb/password-strength-classifier-dataset) comprises passwords from the 000webhost leak, categorized for strength using the PARS tool from Georgia Tech University. This tool integrates commercial password strength meters from Twitter, Microsoft, and Battle. Their unique approach, based on machine learning, only included passwords consistently flagged as weak, medium, or strong across all meters. Initially starting with 3 million passwords, the consistent rating criterion narrowed the dataset to 0.7 million.
 
 To visually grasp the distribution and variability of the dataset, we visualized the boxplot with kde and violin plot which are as follows:
 
-![image](https://github.com/DrishtiShrrrma/codebert-base-password-strength-classifier/assets/129742046/cb6507d0-8ae9-41e3-b320-ca813ac21e02)
+![image](https://github.com/DrishtiShrrrma/codebert-base-password-strength-classifier/assets/129742046/7184e96a-81a7-4071-aa16-2e21a0eed865)
+
+![image](https://github.com/DrishtiShrrrma/codebert-base-password-strength-classifier/assets/129742046/10c8beb9-0e87-4824-9823-97675f7c2e21)
 
 
-![image](https://github.com/DrishtiShrrrma/codebert-base-password-strength-classifier/assets/129742046/ce1fdbe2-5ac4-45fb-bafa-c8f060c8bc22)
+Moreover, the class counts were as follows:
+1  ---> 496801
+0  ---> 89701
+2  ---> 83120
 
+Clearly, a class-imbalance scenario exists. We will be dealing with this with the help of a custom trainer which will be responsible for computing the loss using the normalized weights we will assign and ensuring that the model’s training aligns with our objectives.
 
 ## The Model: A Brief Overview
 In a quest to develop an effective classifier, I turned to the ccodeBERT architecture, training it to discern password strengths into three categories: weak, medium, and strong. The training metrics were initially promising:
